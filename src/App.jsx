@@ -21,7 +21,7 @@ export default function App() {
         body: new URLSearchParams(formData).toString(),
       });
 
-      if (!res.ok) throw new Error("Submission failed");
+      if (res.status >= 400) throw new Error("Submission failed");
       setSubmitted(true);
       form.reset();
     } catch (err) {
