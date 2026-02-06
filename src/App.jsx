@@ -41,6 +41,51 @@ export default function App() {
           Call Now
         </a>
       </header>
+<section style={{ padding: "10px 20px 40px", textAlign: "center" }}>
+  <h2 style={{ color: "#065f46", fontSize: "26px", marginBottom: "16px" }}>
+    Our Cleaning Work
+  </h2>
+
+  <div
+    style={{
+      display: "flex",
+      gap: "18px",
+      justifyContent: "center",
+      flexWrap: "wrap",
+    }}
+  >
+    <img
+      src="/cleaning-1.jpg"
+      alt="Professional cleaning service"
+      style={{
+        width: "320px",
+        maxWidth: "95%",
+        borderRadius: "14px",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+      }}
+    />
+    <img
+      src="/cleaning-2.jpg"
+      alt="Home cleaning service"
+      style={{
+        width: "320px",
+        maxWidth: "95%",
+        borderRadius: "14px",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+      }}
+    />
+    <img
+      src="/cleaning-3.jpg"
+      alt="Commercial cleaning service"
+      style={{
+        width: "320px",
+        maxWidth: "95%",
+        borderRadius: "14px",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+      }}
+    />
+  </div>
+</section>
 
       {/* CONTACT FORM */}
       <section
