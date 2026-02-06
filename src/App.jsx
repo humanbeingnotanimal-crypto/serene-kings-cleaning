@@ -1,6 +1,107 @@
 import React from "react";
 
 // MAIN APP
+function Stars({ value = 5 }) {
+  const full = Math.max(0, Math.min(5, Math.round(value)));
+  return (
+    <span aria-label={`${full} out of 5 stars`} title={`${full} / 5`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <span key={i} style={{ color: i < full ? "#f59e0b" : "#d1d5db", fontSize: "16px" }}>
+          ★
+        </span>
+      ))}
+    </span>
+  );
+}
+function ReviewSlider({ softCard }) {
+  const reviews = [
+    {
+      name: "Local Client",
+      role: "Deep Clean",
+      rating: 5,
+      text: "Booked a deep clean and was genuinely impressed. The team arrived on time, worked efficiently and left the place looking and smelling fresh. Very professional and easy to communicate with.",
+    },
+    {
+      name: "Homeowner – London",
+      role: "Regular Cleaning",
+      rating: 5,
+      text: "Reliable and respectful service. Attention to detail was excellent and they took real care with the property. Will definitely be using Serene Kings Cleaning regularly.",
+    },
+    {
+      name: "Office Client",
+      role: "Commercial Cleaning",
+      rating: 5,
+      text: "We needed a dependable office cleaner and they delivered exactly that. Consistent, thorough and flexible with scheduling. The workspace feels much better maintained now.",
+    },
+  ];
+
+  const [i, setI] = React.useState(0);
+
+  const prev = () => setI((v) => (v - 1 + reviews.length) % reviews.length);
+  const next = () => setI((v) => (v + 1) % reviews.length);
+
+  const r = reviews[i];
+
+  return (
+    <div style={{ ...softCard, padding: "18px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", gap: "10px", flexWrap: "wrap" }}>
+        <div>
+          <div style={{ fontWeight: 950, color: "#065f46" }}>{r.name}</div>
+          <div style={{ marginTop: "6px" }}>
+            <Stars value={r.rating} />{" "}
+            <span style={{ marginLeft: "8px", color: "#0f5132", fontWeight: 800, fontSize: "13px" }}>
+              {r.role}
+            </span>
+          </div>
+        </div>
+
+        <div style={{ display: "flex", gap: "10px" }}>
+          <button
+            type="button"
+            onClick={prev}
+            style={{
+              border: "1px solid rgba(6,95,70,0.18)",
+              background: "#fff",
+              borderRadius: "12px",
+              padding: "10px 12px",
+              fontWeight: 900,
+              cursor: "pointer",
+              color: "#065f46",
+            }}
+            aria-label="Previous review"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            onClick={next}
+            style={{
+              border: "1px solid rgba(6,95,70,0.18)",
+              background: "#fff",
+              borderRadius: "12px",
+              padding: "10px 12px",
+              fontWeight: 900,
+              cursor: "pointer",
+              color: "#065f46",
+            }}
+            aria-label="Next review"
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+      <div style={{ marginTop: "14px", color: "#0f5132", lineHeight: 1.8, fontSize: "14px" }}>
+        “{r.text}”
+      </div>
+
+      <div style={{ marginTop: "14px", color: "#065f46", fontWeight: 900, fontSize: "12px" }}>
+        {i + 1} / {reviews.length}
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const container = {
     fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
@@ -335,38 +436,54 @@ export default function App() {
       </section>
 
       {/* REVIEWS */}
-      <section style={{ ...section, paddingTop: "0" }}>
-        <div style={maxWrap}>
-          <div style={{ textAlign: "center", marginBottom: "16px" }}>
-            <h2 style={{ color: "#065f46", fontSize: "30px", margin: 0, fontWeight: 950 }}>
-              Customer Reviews
-            </h2>
-            <p style={{ margin: "10px auto 0", maxWidth: "820px", color: "#065f46", lineHeight: 1.6 }}>
-              A few words from clients who value a calm, reliable clean.
-            </p>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "16px",
-            }}
-          >
-            {reviews.map((r) => (
-              <div key={r.name} style={{ ...softCard, padding: "18px" }}>
-                <div style={{ fontWeight: 950, color: "#065f46" }}>{r.name}</div>
-                <div style={{ marginTop: "10px", color: "#0f5132", lineHeight: 1.75, fontSize: "14px" }}>
-                  “{r.text}”
-                </div>
-                <div style={{ marginTop: "12px", color: "#065f46", fontWeight: 900, fontSize: "13px" }}>
-                  ★★★★★
-                </div>
-              </div>
-            ))}
-          </div>
+{/* REVIEWS (Google-style stars + slider + Trustpilot-style header) */}
+<section style={{ padding: "0 0 44px" }}>
+  <div style={maxWrap}>
+    <div
+      style={{
+        ...softCard,
+        padding: "18px",
+        marginBottom: "16px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        gap: "10px",
+      }}
+    >
+      <div>
+        <div style={{ fontWeight: 950, color: "#065f46", fontSize: "18px" }}>
+          Excellent
         </div>
-      </section>
+        <div style={{ marginTop: "6px" }}>
+          <Stars value={5} />{" "}
+          <span style={{ marginLeft: "8px", fontWeight: 900, color: "#065f46" }}>
+            5.0
+          </span>
+          <span style={{ marginLeft: "8px", color: "#0f5132" }}>
+            (placeholder reviews)
+          </span>
+        </div>
+      </div>
+
+      <a
+        href="#contact"
+        style={{
+          padding: "12px 16px",
+          borderRadius: "12px",
+          background: "#059669",
+          color: "#fff",
+          textDecoration: "none",
+          fontWeight: 900,
+        }}
+      >
+        Get a Quote
+      </a>
+    </div>
+
+    <ReviewSlider softCard={softCard} />
+  </div>
+</section>
 
       {/* CONTACT FORM */}
       <section style={{ padding: "10px 0 60px" }}>
