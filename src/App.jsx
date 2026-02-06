@@ -53,7 +53,7 @@ export default function App() {
         <form
           name="contact"
           method="POST"
-          action="/thanks"
+          action="/thanks.html"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
