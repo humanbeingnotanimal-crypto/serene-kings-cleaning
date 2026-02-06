@@ -79,19 +79,20 @@ export default function App() {
   ];
 
   const reviews = [
-    {
-      name: "A. Johnson",
-      text: "Excellent service — punctual, thorough and left the flat spotless. Communication was quick and professional.",
-    },
-    {
-      name: "S. Patel",
-      text: "Booked a deep clean and the results were amazing. Bathrooms and kitchen looked brand new. Highly recommend.",
-    },
-    {
-      name: "M. Williams",
-      text: "Great office clean. Consistent, detailed and easy to book. The space feels fresh every week.",
-    },
-  ];
+  {
+    name: "Local Client",
+    text: "Booked a deep clean and was genuinely impressed. The team arrived on time, worked efficiently and left the place looking and smelling fresh. Very professional and easy to communicate with.",
+  },
+  {
+    name: "Homeowner – London",
+    text: "Reliable and respectful service. Attention to detail was excellent and they took real care with the property. Will definitely be using Serene Kings Cleaning regularly.",
+  },
+  {
+    name: "Office Client",
+    text: "We needed a dependable office cleaner and they delivered exactly that. Consistent, thorough and flexible with scheduling. The workspace feels much better maintained now.",
+  },
+];
+
 
   return (
     <div style={container}>
