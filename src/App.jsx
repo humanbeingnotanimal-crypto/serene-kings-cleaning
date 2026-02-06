@@ -15,88 +15,158 @@ export default function App() {
     padding: "0 20px",
   };
 
-  const cardShadow = "0 12px 30px rgba(0,0,0,0.10)";
+  const section = {
+    padding: "44px 0",
+  };
+
+  const softCard = {
+    background: "#fff",
+    borderRadius: "18px",
+    boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+    border: "1px solid rgba(6,95,70,0.10)",
+  };
+
+  const cardShadow = "0 20px 50px rgba(0,0,0,0.18)";
 
   const primaryBtn = {
     display: "inline-block",
-    marginTop: "18px",
-    padding: "12px 22px",
+    padding: "14px 26px",
     backgroundColor: "#059669",
     color: "#fff",
-    borderRadius: "10px",
+    borderRadius: "12px",
     textDecoration: "none",
-    fontWeight: 700,
+    fontWeight: 800,
+    boxShadow: "0 10px 22px rgba(0,0,0,0.22)",
   };
 
   const secondaryBtn = {
     display: "inline-block",
-    marginTop: "18px",
-    marginLeft: "10px",
-    padding: "12px 22px",
+    padding: "14px 26px",
     backgroundColor: "rgba(255,255,255,0.92)",
     color: "#065f46",
-    borderRadius: "10px",
+    borderRadius: "12px",
     textDecoration: "none",
-    fontWeight: 800,
-    border: "1px solid rgba(6,95,70,0.20)",
+    fontWeight: 900,
+    border: "1px solid rgba(6,95,70,0.18)",
+    boxShadow: "0 10px 22px rgba(0,0,0,0.18)",
   };
+
+  const chips = [
+    "Domestic & commercial cleaning",
+    "High attention to detail",
+    "Flexible bookings",
+    "Fast quotes by phone or WhatsApp",
+    "Professional & reliable",
+  ];
+
+  const services = [
+    {
+      title: "Domestic Cleaning",
+      desc: "Regular or one-off home cleaning tailored to your routine and priorities.",
+    },
+    {
+      title: "Deep Cleaning",
+      desc: "A top-to-bottom clean for kitchens, bathrooms, floors and hidden build-up.",
+    },
+    {
+      title: "End of Tenancy",
+      desc: "Move-in / move-out cleaning designed to meet landlord and agency standards.",
+    },
+    {
+      title: "Office & Commercial",
+      desc: "Clean, hygienic workspaces for teams and clients — reliable scheduling available.",
+    },
+  ];
+
+  const reviews = [
+    {
+      name: "A. Johnson",
+      text: "Excellent service — punctual, thorough and left the flat spotless. Communication was quick and professional.",
+    },
+    {
+      name: "S. Patel",
+      text: "Booked a deep clean and the results were amazing. Bathrooms and kitchen looked brand new. Highly recommend.",
+    },
+    {
+      name: "M. Williams",
+      text: "Great office clean. Consistent, detailed and easy to book. The space feels fresh every week.",
+    },
+  ];
 
   return (
     <div style={container}>
       {/* TOP HEADER */}
-      <header style={{ textAlign: "center", padding: "28px 20px 10px" }}>
+      <header style={{ textAlign: "center", padding: "34px 20px 10px" }}>
         <img
           src="/logo.svg"
           alt="Serene Kings Cleaning"
-          style={{ height: "90px", marginBottom: "10px" }}
+          style={{ height: "96px", marginBottom: "10px" }}
         />
-        <h1 style={{ fontSize: "38px", color: "#065f46", margin: "0 0 6px" }}>
+        <h1 style={{ fontSize: "40px", color: "#065f46", margin: "0 0 8px", fontWeight: 900 }}>
           Serene Kings Cleaning Services Ltd
         </h1>
-        <p style={{ fontSize: "18px", color: "#065f46", margin: "0 auto", maxWidth: "820px" }}>
+        <p style={{ fontSize: "18px", color: "#065f46", margin: "0 auto", maxWidth: "860px", lineHeight: 1.55 }}>
           Professional Cleaning Services for Homes & Offices in London & Surrounding Areas
         </p>
       </header>
 
-      {/* WIDE BACKGROUND BANNER (use office image) */}
-      <section style={{ padding: "10px 0 0" }}>
+      {/* PREMIUM HERO BANNER (office background) */}
+      <section style={{ padding: "16px 0 10px" }}>
         <div
           style={{
             ...maxWrap,
-            borderRadius: "18px",
+            borderRadius: "22px",
             overflow: "hidden",
             boxShadow: cardShadow,
-            backgroundImage: "url(/cleaning-3.jpg)", // use your "office" photo here
+            position: "relative",
+            backgroundImage: "url(/cleaning-3.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            minHeight: "320px",
-            position: "relative",
+            minHeight: "380px",
           }}
         >
-          {/* dark overlay for readability */}
+          {/* overlay */}
           <div
             style={{
               position: "absolute",
               inset: 0,
-              background: "linear-gradient(90deg, rgba(6,95,70,0.80), rgba(6,95,70,0.25))",
+              background:
+                "linear-gradient(90deg, rgba(6,95,70,0.92) 0%, rgba(6,95,70,0.62) 42%, rgba(6,95,70,0.18) 100%)",
             }}
           />
-          <div
-            style={{
-              position: "relative",
-              padding: "34px 22px",
-              maxWidth: "720px",
-            }}
-          >
-            <h2 style={{ color: "#fff", fontSize: "32px", margin: "0 0 10px" }}>
+
+          <div style={{ position: "relative", padding: "62px 30px", maxWidth: "650px" }}>
+            <div
+              style={{
+                display: "inline-block",
+                padding: "8px 12px",
+                borderRadius: "999px",
+                background: "rgba(255,255,255,0.15)",
+                border: "1px solid rgba(255,255,255,0.22)",
+                color: "rgba(255,255,255,0.92)",
+                fontWeight: 800,
+                fontSize: "12px",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+              }}
+            >
+              Luxury-level cleaning standards
+            </div>
+
+            <h2 style={{ color: "#fff", fontSize: "40px", lineHeight: 1.15, margin: "14px 0 10px", fontWeight: 950 }}>
               A spotless space, every time.
             </h2>
-            <p style={{ color: "rgba(255,255,255,0.92)", fontSize: "16px", lineHeight: 1.6, margin: 0 }}>
+
+            <p style={{ color: "rgba(255,255,255,0.92)", fontSize: "17px", lineHeight: 1.7, margin: 0 }}>
               Domestic and commercial cleaning delivered with care, consistency, and attention to detail.
               Fast quotes by phone, WhatsApp, or the contact form below.
             </p>
 
-            <div style={{ marginTop: "14px" }}>
+            <p style={{ color: "#bbf7d0", fontSize: "16px", fontStyle: "italic", margin: "16px 0 22px" }}>
+              Rendering Royal Standard, Calm Home Services with smile.
+            </p>
+
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
               <a href="tel:02045136327" style={primaryBtn}>
                 Call Now
               </a>
@@ -113,13 +183,15 @@ export default function App() {
         </div>
       </section>
 
-      {/* PHOTOS (premium grid) */}
-      <section style={{ padding: "34px 0 10px" }}>
+      {/* SERVICES */}
+      <section style={section}>
         <div style={maxWrap}>
-          <div style={{ textAlign: "center", marginBottom: "16px" }}>
-            <h2 style={{ color: "#065f46", fontSize: "28px", margin: 0 }}>Our Cleaning Work</h2>
-            <p style={{ margin: "8px auto 0", maxWidth: "820px", color: "#065f46" }}>
-              A few examples of the standard we aim for — clean, fresh, and welcoming.
+          <div style={{ textAlign: "center", marginBottom: "18px" }}>
+            <h2 style={{ color: "#065f46", fontSize: "30px", margin: 0, fontWeight: 950 }}>
+              Our Services
+            </h2>
+            <p style={{ margin: "10px auto 0", maxWidth: "820px", color: "#065f46", lineHeight: 1.6 }}>
+              Choose a service that suits your space — we’ll tailor the clean to your needs and standards.
             </p>
           </div>
 
@@ -127,8 +199,62 @@ export default function App() {
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "16px",
+            }}
+          >
+            {services.map((s) => (
+              <div key={s.title} style={{ ...softCard, padding: "18px" }}>
+                <div style={{ color: "#065f46", fontWeight: 950, fontSize: "18px" }}>{s.title}</div>
+                <div style={{ marginTop: "8px", color: "#0f5132", lineHeight: 1.65, fontSize: "14px" }}>
+                  {s.desc}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div
+            style={{
+              marginTop: "18px",
+              display: "flex",
+              gap: "10px",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
+            {chips.map((item) => (
+              <span
+                key={item}
+                style={{
+                  background: "#dcfce7",
+                  color: "#065f46",
+                  padding: "10px 12px",
+                  borderRadius: "999px",
+                  fontWeight: 900,
+                  fontSize: "13px",
+                }}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PHOTOS */}
+      <section style={{ ...section, paddingTop: "0" }}>
+        <div style={maxWrap}>
+          <div style={{ textAlign: "center", marginBottom: "16px" }}>
+            <h2 style={{ color: "#065f46", fontSize: "30px", margin: 0, fontWeight: 950 }}>Our Cleaning Work</h2>
+            <p style={{ margin: "10px auto 0", maxWidth: "820px", color: "#065f46", lineHeight: 1.6 }}>
+              A few examples of the standard we aim for — clean, fresh, and welcoming.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
               gap: "18px",
-              alignItems: "stretch",
             }}
           >
             {[
@@ -139,38 +265,25 @@ export default function App() {
               <div
                 key={img.src}
                 style={{
-                  background: "#fff",
-                  borderRadius: "16px",
+                  ...softCard,
                   overflow: "hidden",
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
-                  border: "1px solid rgba(6,95,70,0.10)",
                 }}
               >
-                <div style={{ height: "220px", background: "#e8f5ef" }}>
+                <div style={{ height: "240px", background: "#e8f5ef" }}>
                   <img
                     src={img.src}
                     alt={img.alt}
                     style={{
                       width: "100%",
-                      height: "220px",
-                      objectFit: "cover", // prevents stretching
+                      height: "240px",
+                      objectFit: "cover",
                       display: "block",
-                    }}
-                    onError={(e) => {
-                      // If a filename is wrong, show a clean placeholder instead of a broken icon
-                      e.currentTarget.style.display = "none";
-                      e.currentTarget.parentElement.style.display = "flex";
-                      e.currentTarget.parentElement.style.alignItems = "center";
-                      e.currentTarget.parentElement.style.justifyContent = "center";
-                      e.currentTarget.parentElement.style.color = "#065f46";
-                      e.currentTarget.parentElement.style.fontWeight = "700";
-                      e.currentTarget.parentElement.innerText = "Photo not found — check filename in /public";
                     }}
                   />
                 </div>
-                <div style={{ padding: "14px 14px 16px" }}>
-                  <div style={{ fontWeight: 800, color: "#065f46" }}>{img.alt}</div>
-                  <div style={{ marginTop: "6px", color: "#0f5132", fontSize: "14px", lineHeight: 1.5 }}>
+                <div style={{ padding: "14px 16px 16px" }}>
+                  <div style={{ fontWeight: 950, color: "#065f46" }}>{img.alt}</div>
+                  <div style={{ marginTop: "6px", color: "#0f5132", fontSize: "14px", lineHeight: 1.6 }}>
                     Clean, detailed, and finished to a high standard.
                   </div>
                 </div>
@@ -180,47 +293,27 @@ export default function App() {
         </div>
       </section>
 
-      {/* ABOUT SECTION */}
-      <section style={{ padding: "28px 0 10px" }}>
+      {/* ABOUT */}
+      <section style={{ ...section, paddingTop: "0" }}>
         <div style={maxWrap}>
-          <div
-            style={{
-              background: "#ffffff",
-              borderRadius: "18px",
-              boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
-              border: "1px solid rgba(6,95,70,0.10)",
-              padding: "22px",
-            }}
-          >
-            <h2 style={{ color: "#065f46", fontSize: "28px", margin: "0 0 10px" }}>
+          <div style={{ ...softCard, padding: "22px" }}>
+            <h2 style={{ color: "#065f46", fontSize: "30px", margin: "0 0 10px", fontWeight: 950 }}>
               About Serene Kings Cleaning
             </h2>
 
-            <p style={{ fontSize: "16px", lineHeight: 1.75, margin: "0 0 10px" }}>
+            <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 12px" }}>
               Serene Kings Cleaning Services Ltd provides reliable domestic and commercial cleaning across
               London and surrounding areas. From regular home cleaning to deep cleans, end of tenancy,
               and office cleaning — we tailor each service to your needs and standards.
             </p>
 
-            <p style={{ fontSize: "16px", lineHeight: 1.75, margin: "0 0 14px" }}>
-              We focus on quality, consistency, and clear communication — arriving on time and leaving
-              your space spotless, fresh, and welcoming.
+            <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 14px" }}>
+              We focus on quality, consistency, and clear communication — arriving on time and leaving your
+              space spotless, fresh, and welcoming.
             </p>
 
-            <div
-              style={{
-                display: "flex",
-                gap: "10px",
-                flexWrap: "wrap",
-              }}
-            >
-              {[
-                "Domestic & commercial cleaning",
-                "High attention to detail",
-                "Flexible bookings",
-                "Fast quotes by phone or WhatsApp",
-                "Professional & reliable",
-              ].map((item) => (
+            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+              {chips.map((item) => (
                 <span
                   key={item}
                   style={{
@@ -228,7 +321,7 @@ export default function App() {
                     color: "#065f46",
                     padding: "10px 12px",
                     borderRadius: "999px",
-                    fontWeight: 800,
+                    fontWeight: 900,
                     fontSize: "13px",
                   }}
                 >
@@ -240,132 +333,160 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONTACT FORM */}
-      <section
-        style={{
-          maxWidth: "560px",
-          margin: "30px auto 50px",
-          padding: "0 20px",
-        }}
-      >
-        <div
-          style={{
-            background: "#fff",
-            borderRadius: "18px",
-            boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
-            border: "1px solid rgba(6,95,70,0.10)",
-            padding: "18px",
-          }}
-        >
-          <h2 style={{ margin: "6px 0 14px", color: "#065f46", textAlign: "center" }}>
-            Get a Fast Quote
-          </h2>
-
-          <form
-            name="contact"
-            method="POST"
-            action="/thanks.html"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            <input type="hidden" name="form-name" value="contact" />
-
-            {/* Netlify honeypot (ONLY ONE) */}
-            <p style={{ display: "none" }}>
-              <label>
-                Don’t fill this out: <input name="bot-field" />
-              </label>
+      {/* REVIEWS */}
+      <section style={{ ...section, paddingTop: "0" }}>
+        <div style={maxWrap}>
+          <div style={{ textAlign: "center", marginBottom: "16px" }}>
+            <h2 style={{ color: "#065f46", fontSize: "30px", margin: 0, fontWeight: 950 }}>
+              Customer Reviews
+            </h2>
+            <p style={{ margin: "10px auto 0", maxWidth: "820px", color: "#065f46", lineHeight: 1.6 }}>
+              A few words from clients who value a calm, reliable clean.
             </p>
+          </div>
 
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-              style={{
-                width: "100%",
-                padding: "12px",
-                marginBottom: "12px",
-                borderRadius: "10px",
-                border: "1px solid rgba(6,95,70,0.20)",
-              }}
-            />
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "16px",
+            }}
+          >
+            {reviews.map((r) => (
+              <div key={r.name} style={{ ...softCard, padding: "18px" }}>
+                <div style={{ fontWeight: 950, color: "#065f46" }}>{r.name}</div>
+                <div style={{ marginTop: "10px", color: "#0f5132", lineHeight: 1.75, fontSize: "14px" }}>
+                  “{r.text}”
+                </div>
+                <div style={{ marginTop: "12px", color: "#065f46", fontWeight: 900, fontSize: "13px" }}>
+                  ★★★★★
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-              style={{
-                width: "100%",
-                padding: "12px",
-                marginBottom: "12px",
-                borderRadius: "10px",
-                border: "1px solid rgba(6,95,70,0.20)",
-              }}
-            />
+      {/* CONTACT FORM */}
+      <section style={{ padding: "10px 0 60px" }}>
+        <div style={{ ...maxWrap, maxWidth: "640px" }}>
+          <div style={{ ...softCard, padding: "18px" }}>
+            <h2 style={{ margin: "6px 0 14px", color: "#065f46", textAlign: "center", fontWeight: 950 }}>
+              Get a Fast Quote
+            </h2>
 
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              style={{
-                width: "100%",
-                padding: "12px",
-                marginBottom: "12px",
-                borderRadius: "10px",
-                border: "1px solid rgba(6,95,70,0.20)",
-              }}
-            />
-
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              required
-              rows="4"
-              style={{
-                width: "100%",
-                padding: "12px",
-                marginBottom: "12px",
-                borderRadius: "10px",
-                border: "1px solid rgba(6,95,70,0.20)",
-              }}
-            ></textarea>
-
-            <button
-              type="submit"
-              style={{
-                width: "100%",
-                padding: "12px",
-                backgroundColor: "#059669",
-                color: "#fff",
-                border: "none",
-                borderRadius: "10px",
-                fontWeight: 800,
-                cursor: "pointer",
-              }}
+            <form
+              name="contact"
+              method="POST"
+              action="/thanks.html"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
             >
-              Send Message
-            </button>
-          </form>
+              <input type="hidden" name="form-name" value="contact" />
 
-          <div style={{ textAlign: "center", marginTop: "12px" }}>
-            <a
-              href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-block",
-                padding: "10px 14px",
-                backgroundColor: "#22c55e",
-                color: "#fff",
-                borderRadius: "10px",
-                textDecoration: "none",
-                fontWeight: 800,
-              }}
-            >
-              💬 Chat on WhatsApp
-            </a>
+              {/* Netlify honeypot */}
+              <p style={{ display: "none" }}>
+                <label>
+                  Don’t fill this out: <input name="bot-field" />
+                </label>
+              </p>
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                style={{
+                  width: "100%",
+                  padding: "12px",
+                  marginBottom: "12px",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(6,95,70,0.20)",
+                }}
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                style={{
+                  width: "100%",
+                  padding: "12px",
+                  marginBottom: "12px",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(6,95,70,0.20)",
+                }}
+              />
+
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                style={{
+                  width: "100%",
+                  padding: "12px",
+                  marginBottom: "12px",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(6,95,70,0.20)",
+                }}
+              />
+
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+                rows="4"
+                style={{
+                  width: "100%",
+                  padding: "12px",
+                  marginBottom: "12px",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(6,95,70,0.20)",
+                }}
+              ></textarea>
+
+              <button
+                type="submit"
+                style={{
+                  width: "100%",
+                  padding: "12px",
+                  backgroundColor: "#059669",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "12px",
+                  fontWeight: 950,
+                  cursor: "pointer",
+                }}
+              >
+                Send Message
+              </button>
+            </form>
+
+            <div style={{ textAlign: "center", marginTop: "12px" }}>
+              <a
+                href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  padding: "10px 14px",
+                  backgroundColor: "#22c55e",
+                  color: "#fff",
+                  borderRadius: "12px",
+                  textDecoration: "none",
+                  fontWeight: 900,
+                }}
+              >
+                💬 Chat on WhatsApp
+              </a>
+            </div>
+
+            <div style={{ textAlign: "center", marginTop: "14px" }}>
+              <a href="tel:02045136327" style={{ color: "#059669", fontWeight: 900, textDecoration: "none" }}>
+                Or call: 020 4513 6327
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -378,7 +499,7 @@ export default function App() {
           rel="noopener noreferrer"
           style={{
             color: "#059669",
-            fontWeight: 800,
+            fontWeight: 900,
             textDecoration: "underline",
           }}
         >
