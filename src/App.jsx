@@ -115,6 +115,7 @@ export default function App() {
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
+          <input type="text" name="bot-field" style={{ display: "none" }} />
 
           <p style={{ display: "none" }}>
             <label>
