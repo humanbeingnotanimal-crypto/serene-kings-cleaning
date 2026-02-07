@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://serenekingscleaning.co.uk/sitemap.xml
+https://glowing-biscotti-775a26.netlify.app//sitemap.xml
