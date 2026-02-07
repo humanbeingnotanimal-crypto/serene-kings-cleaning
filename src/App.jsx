@@ -349,42 +349,41 @@ export default function App() {
       </section>
 
       {/* ABOUT */}
-      <section style={{ ...section, paddingTop: "0" }}>
-        <div style={maxWrap}>
-          <div style={{ ...softCard, padding: "22px" }}>
-            <h2 style={{ color: "#065f46", fontSize: "30px", margin: "0 0 10px", fontWeight: 950 }}>
-              About Serene Kings Cleaning
-            </h2>
+<section style={{ ...section, paddingTop: "0" }}>
+  <div style={maxWrap}>
+    <div style={{ ...softCard, padding: "22px" }}>
+      <h2 style={{ color: "#065f46", fontSize: "30px", margin: "0 0 10px", fontWeight: 950 }}>
+        About Serene Kings Cleaning
+      </h2>
 
-            <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 12px" }}>
-              Serene Kings Cleaning Services Ltd provides reliable domestic and commercial cleaning across London and surrounding areas including Central London, Croydon, Stratford, Wembley, Greenwich, Hackney, Canary Wharf, Islington, Chelsea, Clapham and more.
-            </p>
+      <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 12px" }}>
+        Serene Kings Cleaning Services Ltd provides reliable domestic and commercial cleaning across London and surrounding areas including Central London, Croydon, Stratford, Wembley, Greenwich, Hackney, Canary Wharf, Islington, Chelsea, Clapham and more.
+      </p>
 
-            <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 14px" }}>
-              We focus on quality, consistency, and clear communication — arriving on time and leaving your space
-              spotless, fresh, and welcoming.
-            </p>
+      <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 14px" }}>
+        We focus on quality, consistency, and clear communication — arriving on time and leaving your space spotless, fresh, and welcoming.
+      </p>
 
-            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-              {chips.map((item) => (
-                <span
-                  key={item}
-                  style={{
-                    background: "#dcfce7",
-                    color: "#065f46",
-                    padding: "10px 12px",
-                    borderRadius: "999px",
-                    fontWeight: 900,
-                    fontSize: "13px",
-                  }}
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+        {chips.map((item) => (
+          <span
+            key={item}
+            style={{
+              background: "#dcfce7",
+              color: "#065f46",
+              padding: "10px 12px",
+              borderRadius: "999px",
+              fontWeight: 900,
+              fontSize: "13px",
+            }}
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* REVIEWS */}
       <section style={{ padding: "0 0 44px" }}>
