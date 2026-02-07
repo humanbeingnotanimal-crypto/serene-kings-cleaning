@@ -1,51 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Serene Kings Cleaning Services Ltd | Cleaners in London & Surrounding Areas</title>
+    <meta
+      name="description"
+      content="Serene Kings Cleaning Services Ltd provides reliable domestic, deep clean, end of tenancy and office cleaning across London & surrounding areas. Get a fast quote by phone, WhatsApp or online form."
+    />
     <meta name="robots" content="index,follow" />
-<meta name="theme-color" content="#059669" />
+    <meta name="theme-color" content="#059669" />
+    <link rel="canonical" href="https://serenekingscleaning.co.uk/" />
 
-<!-- Open Graph -->
-<meta property="og:site_name" content="Serene Kings Cleaning Services Ltd" />
-<meta property="og:image" content="/og-image.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Serene Kings Cleaning Services Ltd" />
+    <meta property="og:title" content="Serene Kings Cleaning Services Ltd" />
+    <meta
+      property="og:description"
+      content="Domestic, end of tenancy & office cleaning across London & surrounding areas. Fast quotes by phone, WhatsApp or online form."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://serenekingscleaning.co.uk/" />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="/og-image.jpg" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og-image.jpg" />
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Serene Kings Cleaning Services Ltd",
+        "url": "https://serenekingscleaning.co.uk/",
+        "telephone": "+442045136327",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "71-75 Shelton Street",
+          "addressLocality": "London",
+          "postalCode": "WC2H 9JQ",
+          "addressCountry": "GB"
+        },
+        "areaServed": ["London", "Greater London", "Surrounding areas"],
+        "serviceType": [
+          "Domestic Cleaning",
+          "Deep Cleaning",
+          "End of Tenancy Cleaning",
+          "Office & Commercial Cleaning"
+        ]
+      }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ5ZJVBRRD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-GQ5ZJVBRRD");
+    </script>
   </head>
 
   <body>
-    <!-- Netlify form detection (hidden). Must be INSIDE <body> -->
-    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="form-name" value="contact" />
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <input type="tel" name="phone" />
-      <textarea name="message"></textarea>
-      <input type="text" name="bot-field" />
-    </form>
-
     <div id="root"></div>
-
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Serene Kings Cleaning Services Ltd",
-  "url": "https://serenekingscleaning.co.uk/",
-  "telephone": "+442045136327",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "71-75 Shelton Street",
-    "addressLocality": "London",
-    "postalCode": "WC2H 9JQ",
-    "addressCountry": "GB"
-  },
-  "areaServed": ["London"],
-  "serviceType": ["Domestic Cleaning","Deep Cleaning","End of Tenancy Cleaning","Office & Commercial Cleaning"]
-}
-</script>
-
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
