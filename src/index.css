@@ -1,4 +1,29 @@
 body {
   margin: 0;
   background: #f9fafb;
+  /* Mobile polish */
+@media (max-width: 600px) {
+  h1 { font-size: 32px !important; }
+  h2 { font-size: 26px !important; }
+
+  /* Reduce big paddings */
+  header { padding: 26px 16px 10px !important; }
+
+  /* Make big banner text fit nicer */
+  section div[style*="minHeight: 380px"] {
+    min-height: 320px !important;
+  }
+
+  /* Make buttons easier to tap */
+  a, button {
+    min-height: 44px;
+  }
+
+  /* Stop side overflow */
+  body, #root {
+    overflow-x: hidden;
+  }
 }
+
+}
+
