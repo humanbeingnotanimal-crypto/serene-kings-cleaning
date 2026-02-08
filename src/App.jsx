@@ -267,6 +267,11 @@ export default function App() {
                 WhatsApp Quote
               </a>
             </div>
+            <div style={{ marginTop: "14px", color: "#bbf7d0", fontWeight: 700 }}>
+✓ Reliable  
+✓ Trusted  
+✓ London & Surrounding Areas
+</div>
           </div>
         </div>
       </section>
