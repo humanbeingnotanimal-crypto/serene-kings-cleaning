@@ -362,8 +362,7 @@ export default function App() {
       </h2>
 
       <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 12px" }}>
-        Serene Kings Cleaning Services Ltd provides reliable domestic and commercial cleaning across London and surrounding areas including Central London, Croydon, Stratford, Wembley, Greenwich, Hackney, Canary Wharf, Islington, Chelsea, Clapham and more.
-      </p>
+Serene Kings Cleaning Services Ltd provides reliable domestic and commercial cleaning across London and surrounding areas including Central London, Croydon, Stratford, Wembley, Greenwich, Hackney, Canary Wharf, Islington, Chelsea, Clapham and more.      </p>
 
       <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 14px" }}>
         We focus on quality, consistency, and clear communication — arriving on time and leaving your space spotless, fresh, and welcoming.
