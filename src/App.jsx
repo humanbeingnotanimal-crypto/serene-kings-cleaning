@@ -556,6 +556,26 @@ export default function App() {
           View on Google Maps
         </a>
       </section>
+      <a
+  href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    position: "fixed",
+    bottom: "20px",
+    right: "20px",
+    background: "#25D366",
+    color: "#fff",
+    padding: "14px 16px",
+    borderRadius: "50px",
+    fontWeight: 800,
+    textDecoration: "none",
+    boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
+    zIndex: 999,
+  }}
+>
+💬 WhatsApp
+</a>
     </div>
   );
 }
