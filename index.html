@@ -1,101 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17911727852"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
 
-  gtag('config', 'AW-17911727852');
-</script>
-    <meta charset="UTF-8" />
-    <meta name="google-site-verification" content="N5HxaEhFFgI0XEbF-fS6cdrsiVY23HHyntowAwYrduU" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (Ads + Analytics together) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17911727852"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    <title>Serene Kings Cleaning | Cleaners in London & Surrounding Areas</title>
-    <meta
-      name="description"
-      content="Serene Kings Cleaning Services Ltd provides reliable domestic, deep clean, end of tenancy and office cleaning across London & surrounding areas. Get a fast quote by phone, WhatsApp or online form."
-    />
-    <meta name="robots" content="index,follow" />
-    <meta name="theme-color" content="#059669" />
-    <link rel="canonical" href="https://serenekingscleaning.co.uk/" />
+    /* Google Ads */
+    gtag('config', 'AW-17911727852');
 
-    <!-- Open Graph -->
-    <meta property="og:site_name" content="Serene Kings Cleaning Services Ltd" />
-    <meta property="og:title" content="Serene Kings Cleaning Services Ltd" />
-    <meta
-      property="og:description"
-      content="Domestic, end of tenancy & office cleaning across London & surrounding areas. Fast quotes by phone, WhatsApp or online form."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://serenekingscleaning.co.uk/" />
-    <meta property="og:image" content="/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    /* Google Analytics */
+    gtag('config', 'G-GQ5ZJVBRRD');
+  </script>
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/og-image.jpg" />
-
-    <!-- Local Business Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Serene Kings Cleaning Services Ltd",
-        "url": "https://serenekingscleaning.co.uk/",
-        "telephone": "+442045136327",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "71-75 Shelton Street",
-          "addressLocality": "London",
-          "postalCode": "WC2H 9JQ",
-          "addressCountry": "GB"
-        },
-        "areaServed": ["London", "Greater London", "Surrounding areas"],
-        "serviceType": [
-          "Domestic Cleaning",
-          "Deep Cleaning",
-          "End of Tenancy Cleaning",
-          "Office & Commercial Cleaning"
-        ]
+  <!-- Phone Click Conversion Function -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
       }
-    </script>
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17911727852/_VJCCO2Z-fcbEOyN_dxC',
+        'value': 20.0,
+        'currency': 'GBP',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ5ZJVBRRD"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-GQ5ZJVBRRD");
-    </script>
-    <script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17911727852/_VJCCO2Z-fcbEOyN_dxC',
-      'value': 20.0,
-      'currency': 'GBP',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
+  <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="N5HxaEhFFgI0XEbF-fS6cdrsiVY23HHyntowAwYrduU" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  </head>
+  <title>Serene Kings Cleaning | Cleaners in London & Surrounding Areas</title>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <meta name="description"
+    content="Serene Kings Cleaning Services Ltd provides reliable domestic, deep clean, end of tenancy and office cleaning across London & surrounding areas. Get a fast quote by phone, WhatsApp or online form." />
+
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#059669" />
+  <link rel="canonical" href="https://serenekingscleaning.co.uk/" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Serene Kings Cleaning Services Ltd" />
+  <meta property="og:title" content="Serene Kings Cleaning Services Ltd" />
+  <meta property="og:description"
+    content="Domestic, end of tenancy & office cleaning across London & surrounding areas. Fast quotes by phone, WhatsApp or online form." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://serenekingscleaning.co.uk/" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/og-image.jpg" />
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Serene Kings Cleaning Services Ltd",
+    "url": "https://serenekingscleaning.co.uk/",
+    "telephone": "+442045136327",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "71-75 Shelton Street",
+      "addressLocality": "London",
+      "postalCode": "WC2H 9JQ",
+      "addressCountry": "GB"
+    },
+    "areaServed": ["London", "Greater London", "Surrounding areas"],
+    "serviceType": [
+      "Domestic Cleaning",
+      "Deep Cleaning",
+      "End of Tenancy Cleaning",
+      "Office & Commercial Cleaning"
+    ]
+  }
+  </script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 </html>
