@@ -75,6 +75,23 @@
       gtag("js", new Date());
       gtag("config", "G-GQ5ZJVBRRD");
     </script>
+    <script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17911727852/_VJCCO2Z-fcbEOyN_dxC',
+      'value': 20.0,
+      'currency': 'GBP',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
   </head>
 
   <body>
