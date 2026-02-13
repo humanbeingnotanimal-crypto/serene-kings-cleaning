@@ -21,7 +21,7 @@ function Stars({ value = 5, size = 16 }) {
   );
 }
 
-// Review slider (data passed in)
+// Review slider
 function ReviewSlider({ softCard, reviews }) {
   const [i, setI] = React.useState(0);
 
@@ -42,10 +42,22 @@ function ReviewSlider({ softCard, reviews }) {
         }}
       >
         <div>
-          <div style={{ fontWeight: 950, color: "#065f46", fontSize: "16px" }}>{r.name}</div>
-          <div style={{ marginTop: "6px", display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+          <div style={{ fontWeight: 950, color: "#065f46", fontSize: "16px" }}>
+            {r.name}
+          </div>
+          <div
+            style={{
+              marginTop: "6px",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              flexWrap: "wrap",
+            }}
+          >
             <Stars value={r.rating} />
-            <span style={{ color: "#0f5132", fontWeight: 800, fontSize: "13px" }}>{r.role}</span>
+            <span style={{ color: "#0f5132", fontWeight: 800, fontSize: "13px" }}>
+              {r.role}
+            </span>
           </div>
         </div>
 
@@ -112,9 +124,7 @@ export default function App() {
     padding: "0 20px",
   };
 
-  const section = {
-    padding: "44px 0",
-  };
+  const section = { padding: "44px 0" };
 
   const softCard = {
     background: "#fff",
@@ -163,7 +173,6 @@ export default function App() {
     { title: "Office & Commercial", desc: "Clean, hygienic workspaces — reliable scheduling available." },
   ];
 
-  // Placeholder reviews (use until you have permission for real names)
   const reviews = [
     {
       name: "Local Client",
@@ -185,6 +194,13 @@ export default function App() {
     },
   ];
 
+  // Safe helper: only call tracking if it exists
+  const trackCall = (tel) => {
+    if (typeof window !== "undefined" && typeof window.gtag_report_conversion === "function") {
+      window.gtag_report_conversion(tel);
+    }
+  };
+
   return (
     <div style={container}>
       {/* TOP HEADER */}
@@ -193,13 +209,12 @@ export default function App() {
         <h1 style={{ fontSize: "40px", color: "#065f46", margin: "0 0 8px", fontWeight: 900 }}>
           Serene Kings Cleaning Services Ltd
         </h1>
-        {/* SEO line: London + surrounding areas + services */}
         <p style={{ fontSize: "18px", color: "#065f46", margin: "0 auto", maxWidth: "860px", lineHeight: 1.55 }}>
           Domestic, deep clean, end of tenancy and office cleaning across London & surrounding areas.
         </p>
       </header>
 
-      {/* PREMIUM HERO BANNER (office background) */}
+      {/* HERO */}
       <section style={{ padding: "16px 0 10px" }}>
         <div
           style={{
@@ -246,8 +261,8 @@ export default function App() {
             </h2>
 
             <p style={{ color: "rgba(255,255,255,0.92)", fontSize: "17px", lineHeight: 1.7, margin: 0 }}>
-              Domestic and commercial cleaning delivered with care, consistency, and attention to detail.
-              Fast quotes by phone, WhatsApp, or the contact form below.
+              Domestic and commercial cleaning delivered with care, consistency, and attention to detail. Fast quotes by
+              phone, WhatsApp, or the contact form below.
             </p>
 
             <p style={{ color: "#bbf7d0", fontSize: "16px", fontStyle: "italic", margin: "16px 0 22px" }}>
@@ -256,12 +271,13 @@ export default function App() {
 
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
               <a
-  href="tel:02045136327"
-  onClick={() => gtag_report_conversion('tel:02045136327')}
->
-
+                href="tel:02045136327"
+                onClick={() => trackCall("tel:02045136327")}
+                style={primaryBtn}
+              >
                 Call Now
               </a>
+
               <a
                 href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
                 target="_blank"
@@ -271,11 +287,12 @@ export default function App() {
                 WhatsApp Quote
               </a>
             </div>
-            <div style={{ marginTop: "14px", color: "#bbf7d0", fontWeight: 700 }}>
-✓ Reliable  
-✓ Trusted  
-✓ London & Surrounding Areas
-</div>
+
+            <div style={{ marginTop: "14px", color: "#bbf7d0", fontWeight: 700, lineHeight: 1.8 }}>
+              <div>✓ Reliable</div>
+              <div>✓ Trusted</div>
+              <div>✓ London & Surrounding Areas</div>
+            </div>
           </div>
         </div>
       </section>
@@ -358,40 +375,44 @@ export default function App() {
       </section>
 
       {/* ABOUT */}
-<section style={{ ...section, paddingTop: "0" }}>
-  <div style={maxWrap}>
-    <div style={{ ...softCard, padding: "22px" }}>
-      <h2 style={{ color: "#065f46", fontSize: "30px", margin: "0 0 10px", fontWeight: 950 }}>
-        About Serene Kings Cleaning
-      </h2>
+      <section style={{ ...section, paddingTop: "0" }}>
+        <div style={maxWrap}>
+          <div style={{ ...softCard, padding: "22px" }}>
+            <h2 style={{ color: "#065f46", fontSize: "30px", margin: "0 0 10px", fontWeight: 950 }}>
+              About Serene Kings Cleaning
+            </h2>
 
-      <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 12px" }}>
-Serene Kings Cleaning Services Ltd provides reliable domestic and commercial cleaning across London and surrounding areas including Central London, Croydon, Stratford, Wembley, Greenwich, Hackney, Canary Wharf, Islington, Chelsea, Clapham and more.      </p>
+            <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 12px" }}>
+              Serene Kings Cleaning Services Ltd provides reliable domestic and commercial cleaning across London and
+              surrounding areas including Central London, Croydon, Stratford, Wembley, Greenwich, Hackney, Canary Wharf,
+              Islington, Chelsea, Clapham and more.
+            </p>
 
-      <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 14px" }}>
-        We focus on quality, consistency, and clear communication — arriving on time and leaving your space spotless, fresh, and welcoming.
-      </p>
+            <p style={{ fontSize: "16px", lineHeight: 1.8, margin: "0 0 14px" }}>
+              We focus on quality, consistency, and clear communication — arriving on time and leaving your space
+              spotless, fresh, and welcoming.
+            </p>
 
-      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-        {chips.map((item) => (
-          <span
-            key={item}
-            style={{
-              background: "#dcfce7",
-              color: "#065f46",
-              padding: "10px 12px",
-              borderRadius: "999px",
-              fontWeight: 900,
-              fontSize: "13px",
-            }}
-          >
-            {item}
-          </span>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+              {chips.map((item) => (
+                <span
+                  key={item}
+                  style={{
+                    background: "#dcfce7",
+                    color: "#065f46",
+                    padding: "10px 12px",
+                    borderRadius: "999px",
+                    fontWeight: 900,
+                    fontSize: "13px",
+                  }}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* REVIEWS */}
       <section style={{ padding: "0 0 44px" }}>
@@ -444,7 +465,13 @@ Serene Kings Cleaning Services Ltd provides reliable domestic and commercial cle
               Get a Fast Quote
             </h2>
 
-            <form name="contact" method="POST" action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
+            <form
+              name="contact"
+              method="POST"
+              action="/thanks.html"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
               <input type="hidden" name="form-name" value="contact" />
 
               <p style={{ display: "none" }}>
@@ -506,7 +533,7 @@ Serene Kings Cleaning Services Ltd provides reliable domestic and commercial cle
                   borderRadius: "12px",
                   border: "1px solid rgba(6,95,70,0.20)",
                 }}
-              ></textarea>
+              />
 
               <button
                 type="submit"
@@ -544,8 +571,13 @@ Serene Kings Cleaning Services Ltd provides reliable domestic and commercial cle
               </a>
             </div>
 
+            {/* This phone link ALSO tracks */}
             <div style={{ textAlign: "center", marginTop: "14px" }}>
-              <a href="tel:02045136327" style={{ color: "#059669", fontWeight: 900, textDecoration: "none" }}>
+              <a
+                href="tel:02045136327"
+                onClick={() => trackCall("tel:02045136327")}
+                style={{ color: "#059669", fontWeight: 900, textDecoration: "none" }}
+              >
                 Or call: 020 4513 6327
               </a>
             </div>
@@ -564,26 +596,28 @@ Serene Kings Cleaning Services Ltd provides reliable domestic and commercial cle
           View on Google Maps
         </a>
       </section>
+
+      {/* FLOATING WHATSAPP BUTTON */}
       <a
-  href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
-  target="_blank"
-  rel="noopener noreferrer"
-  style={{
-    position: "fixed",
-    bottom: "20px",
-    right: "20px",
-    background: "#25D366",
-    color: "#fff",
-    padding: "14px 16px",
-    borderRadius: "50px",
-    fontWeight: 800,
-    textDecoration: "none",
-    boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
-    zIndex: 999,
-  }}
->
-💬 WhatsApp
-</a>
+        href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          background: "#25D366",
+          color: "#fff",
+          padding: "14px 16px",
+          borderRadius: "50px",
+          fontWeight: 800,
+          textDecoration: "none",
+          boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
+          zIndex: 999,
+        }}
+      >
+        💬 WhatsApp
+      </a>
     </div>
   );
 }
