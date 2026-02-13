@@ -560,21 +560,27 @@ export default function App() {
 
             <div style={{ textAlign: "center", marginTop: "12px" }}>
               <a
-                href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "inline-block",
-                  padding: "10px 14px",
-                  backgroundColor: "#22c55e",
-                  color: "#fff",
-                  borderRadius: "12px",
-                  textDecoration: "none",
-                  fontWeight: 900,
-                }}
-              >
-                💬 Chat on WhatsApp
-              </a>
+  href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => {
+    if (typeof window !== "undefined" && typeof window.gtag_report_whatsapp === "function") {
+      window.gtag_report_whatsapp("https://wa.me/447757789668");
+    }
+  }}
+  style={{
+    display: "inline-block",
+    padding: "10px 14px",
+    backgroundColor: "#22c55e",
+    color: "#fff",
+    borderRadius: "12px",
+    textDecoration: "none",
+    fontWeight: 900,
+  }}
+>
+  💬 Chat on WhatsApp
+</a>
+
             </div>
 
             {/* This phone link ALSO tracks */}
@@ -605,25 +611,31 @@ export default function App() {
 
       {/* FLOATING WHATSAPP BUTTON */}
       <a
-        href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          right: "20px",
-          background: "#25D366",
-          color: "#fff",
-          padding: "14px 16px",
-          borderRadius: "50px",
-          fontWeight: 800,
-          textDecoration: "none",
-          boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
-          zIndex: 999,
-        }}
-      >
-        💬 WhatsApp
-      </a>
+  href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => {
+    if (typeof window !== "undefined" && typeof window.gtag_report_whatsapp === "function") {
+      window.gtag_report_whatsapp("https://wa.me/447757789668");
+    }
+  }}
+  style={{
+    position: "fixed",
+    bottom: "20px",
+    right: "20px",
+    background: "#25D366",
+    color: "#fff",
+    padding: "14px 16px",
+    borderRadius: "50px",
+    fontWeight: 800,
+    textDecoration: "none",
+    boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
+    zIndex: 999,
+  }}
+>
+  💬 WhatsApp
+</a>
+
     </div>
   );
 }
