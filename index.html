@@ -33,6 +33,28 @@
     return false;
   }
   </script>
+<script>
+function gtag_report_whatsapp(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+
+  if (typeof gtag === "function") {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17911727852/AGONCKPtjfgbEOyN_dxC',
+      'value': 20.0,
+      'currency': 'GBP',
+      'event_callback': callback
+    });
+  } else {
+    callback();
+  }
+
+  return false;
+}
+</script>
 
   <meta charset="UTF-8" />
   <meta name="google-site-verification" content="N5HxaEhFFgI0XEbF-fS6cdrsiVY23HHyntowAwYrduU" />
