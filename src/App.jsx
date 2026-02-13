@@ -279,13 +279,19 @@ export default function App() {
               </a>
 
               <a
-                href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={secondaryBtn}
-              >
-                WhatsApp Quote
-              </a>
+  href="https://wa.me/447757789668?text=Hello%20I%20would%20like%20a%20cleaning%20quote"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => {
+    if (typeof window !== "undefined" && typeof window.gtag_report_whatsapp === "function") {
+      window.gtag_report_whatsapp("https://wa.me/447757789668");
+    }
+  }}
+  style={secondaryBtn}
+>
+  WhatsApp Quote
+</a>
+
             </div>
 
             <div style={{ marginTop: "14px", color: "#bbf7d0", fontWeight: 700, lineHeight: 1.8 }}>
