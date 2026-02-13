@@ -255,7 +255,11 @@ export default function App() {
             </p>
 
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <a href="tel:02045136327" style={primaryBtn}>
+              <a
+  href="tel:02045136327"
+  onClick={() => gtag_report_conversion('tel:02045136327')}
+>
+
                 Call Now
               </a>
               <a
